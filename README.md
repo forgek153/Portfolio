@@ -15,4 +15,7 @@ Hey there! Take a peek at my data portfolio! It's where I give you the lowdown o
 
 | Project Link | Area | Project Description | Libraries |    
 |---|---|---|---|
-| 👩🏻‍💻 ---- | EDA | **Explanation** | pandas,matplotlib,seaborn | 
+| 👩🏻‍💻 SuperMarket | EDA | **Explanation** | pandas,matplotlib,seaborn | 
+| 👩🏻‍💻 Aerofit Treadmill | EDA | **Explanation** | pandas,matplotlib,seaborn |
+| 👩🏻‍💻 Thailand Road Accidents | EDA | **Explanation** | pandas,matplotlib,seaborn |
+| 👩🏻‍💻 UA Combine | Data Wrangling | **Explanation** | selenium,pandas |
