@@ -17,7 +17,7 @@ Hey there! Take a peek at my data portfolio! It's where I give you the lowdown o
 |---|---|---|---|
 | 👩🏻‍💻 SuperMarket | EDA | **Explanation** | pandas,matplotlib,seaborn | 
 | 👩🏻‍💻 Aerofit Treadmill | EDA | **Explanation** | pandas,matplotlib,seaborn |
-| 👩🏻‍💻 Thailand Road Accidents | EDA | **Explanation** | pandas,matplotlib,seaborn |
+| 👩🏻‍💻 [Thailand Road Accidents](https://github.com/forgek153/Projects/blob/main/Python/Thailand%20Road%20Accidents/Thailand%20Road%20Accidents.ipynb) | EDA | Analyzed Thai road accident data (2019-2022) using Python's pandas and matplotlib, revealing patterns, top accident-prone provinces, and insights on accident types and response times. Prepared for interactive exploration in Power BI.| pandas,matplotlib,seaborn |
 | 👩🏻‍💻 [Under Armour Combine](https://github.com/forgek153/Projects/tree/main/Python/UA%20Combine) | Data Scraping | This Selenium project scrapes sports competition data, consolidates it into one Excel file, and extracts additional athlete attributes into another Excel file. | selenium,pandas |
 
 # Power BI
