@@ -19,3 +19,9 @@ Hey there! Take a peek at my data portfolio! It's where I give you the lowdown o
 | 👩🏻‍💻 Aerofit Treadmill | EDA | **Explanation** | pandas,matplotlib,seaborn |
 | 👩🏻‍💻 Thailand Road Accidents | EDA | **Explanation** | pandas,matplotlib,seaborn |
 | 👩🏻‍💻 [Under Armour Combine](https://github.com/forgek153/Projects/tree/main/Python/UA%20Combine) | Data Scraping | This Selenium project scrapes sports competition data, consolidates it into one Excel file, and extracts additional athlete attributes into another Excel file. | selenium,pandas |
+
+# Power BI
+| Project Link  | Project Description | Dashboard Link |    
+|---|---|---|
+| 👩🏻‍💻 Thailand Road Accidents  | **Explanation** | LINK |
+
