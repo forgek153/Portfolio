@@ -267,7 +267,7 @@ ORDER BY
 | Silver   | 100.80897097625329  | 35.74406332453826  | 724.91492453825879| 1895  |
 ***
 ## Analysis:
-|Segment|Analysis|Next Steps|
+|Segment|Analysis|Action|
 |------|----------|----|
 |Bronze|Customers in the Bronze segment have the longest average recency, indicating they haven't made a purchase recently compared to other segments. Their frequency and monetary value are the lowest among the three groups. This suggests they are either occasional shoppers or new customers who haven't yet established a pattern of regular purchasing.|Aim to increase engagement through welcome offers, re-engagement campaigns, or introducing loyalty programs.|
 |Gold|Gold segment customers are the most valuable to the business. They have purchased recently, do so frequently, and spend significantly more than other segments. This group likely includes loyal customers or those with a higher propensity to purchase. Focusing marketing efforts and customer retention strategies on this segment could yield high returns.|Focus on retention strategies, personalized offers, and exclusive services to maintain their loyalty and high spending.|
