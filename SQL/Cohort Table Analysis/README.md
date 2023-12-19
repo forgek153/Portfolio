@@ -19,20 +19,20 @@ DB Used: BigQuery
 ***
 ## :dart: Techniques Used
 
-| **Technique**                           | **Count of Usage** | **Used in Case Study** |
-|----------------------------------------|---------------------|------------------------|
-| **JOIN Operation**                     | 40                  | 1, 2, 3                |
-| **GROUP BY Clause**                    | 27                  | 1, 2, 3                |
-| **SUM() Function**                     | 26                  | 1, 2, 4                |
-| **COUNT() Function**                   | 26                  | 1, 2, 3, 4             |
-| **DISTINCT Keyword**                   | 16                  | 1, 2, 4                |
-| **Common Table Expression (CTE)**      | 18                  | 1, 2, 3, 4             |
-| **Window Functions (RANK(), Dense_Rank())** | 18          | 1, 2, 3                |
-| **ORDER BY Clause**                    | 19                  | 1, 2                   |
-| **CASE Statement**                     | 8                   | 1, 2, 4                |
-| **LIMIT Clause**                       | 3                   | 1, 2                   |
-| **Date Functions (TO_CHAR(), Extract())** | 7              | 1, 2, 3                |
-| **PARTITION BY Clause**                | 2                   | 1, 3                   |
+| **Technique**                           | **Count of Usage** | 
+|----------------------------------------|---------------------|
+| **JOIN Operation**                     | 40                  |
+| **GROUP BY Clause**                    | 27                  | 
+| **SUM() Function**                     | 26                  |
+| **COUNT() Function**                   | 26                  | 
+| **DISTINCT Keyword**                   | 16                  | 
+| **Common Table Expression (CTE)**      | 18                  | 
+| **Window Functions (RANK(), Dense_Rank())** | 18          |
+| **ORDER BY Clause**                    | 19                  | 
+| **CASE Statement**                     | 8                   |
+| **LIMIT Clause**                       | 3                   |
+| **Date Functions (TO_CHAR(), Extract())** | 7              | 
+| **PARTITION BY Clause**                | 2                   |
 
 ***
 ## SQL Query
