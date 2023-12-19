@@ -13,6 +13,7 @@ DB Used: BigQuery
 
   - [SQL Query](#sql-query)
   - [Result](#result)
+  - [Analysis](#analysis)
   
 ***
 ## SQL Query
