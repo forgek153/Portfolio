@@ -1,4 +1,4 @@
-# 💡 RFM Analysis
+# :mag_right: RFM Analysis
 Welcome, this page will be about using SQL to create an RFM analysis! 
 
 A cohort table, often used in cohort analysis, is a tool that groups customers (or users) into cohorts based on shared characteristics or experiences within a defined time-span. These characteristics are often their first purchase date or the date they first signed up for a service. The cohort table then tracks and compares the behavior and performance of these groups over time.
