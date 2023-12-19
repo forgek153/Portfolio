@@ -1,12 +1,12 @@
 # :floppy_disk: Cohort Table Analysis
-Welcome, this page will be about using SQL to create a cohort table for further analysis! 
 
-A cohort table, often used in cohort analysis, is a tool that groups customers (or users) into cohorts based on shared characteristics or experiences within a defined time-span. These characteristics are often their first purchase date or the date they first signed up for a service. The cohort table then tracks and compares the behavior and performance of these groups over time.
+This project involves creating a cohort analysis table using SQL and BigQuery, focusing on grouping customers based on their first purchase or sign-up dates. The analysis tracks and compares customer behavior over time, providing insights into retention and engagement patterns. The project includes data filtering, calculating cohort indices, and visualizing retention rates using Python and Seaborn, aiding in strategic decision-making for customer engagement and retention efforts.
 
 The dataset used can be found [here](https://archive.ics.uci.edu/dataset/352/online+retail)
 
 DB Used: BigQuery 
 
+A cohort table, often used in cohort analysis, is a tool that groups customers (or users) into cohorts based on shared characteristics or experiences within a defined time-span. These characteristics are often their first purchase date or the date they first signed up for a service. The cohort table then tracks and compares the behavior and performance of these groups over time.
 ***
 
 ## 📚 Table of Contents
