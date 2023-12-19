@@ -13,7 +13,7 @@ A cohort table, often used in cohort analysis, is a tool that groups customers (
 
   - [SQL Query](#sql-query)
   - [Python](#python)
-    - [Quick Analysis](#quick-analysis)
+    - [Analysis](#analysis)
 
 
 ***
@@ -392,15 +392,22 @@ sns.heatmap(data = df, annot = True,fmt = '.1f',vmin = 0.0,vmax = 50,cmap='BuGn'
 
 ![image](https://github.com/forgek153/Projects/assets/132448826/0ec00f1b-4d0b-469e-9b4b-b8434b3235c8)
 ***
-## Quick Analysis
+## Analysis
 
-Analyzing the table:
+| Category               | Details |
+|------------------------|---------|
+| Initial Engagement     | All cohorts start with 100% retention, as expected. |
+| Long-term Engagement   | Some cohorts show increased retention at specific points (e.g., 6th, 12th month), possibly due to seasonal buying patterns, marketing campaigns, or customer lifecycle events. |
+| Declining Retention    | A common trend across most cohorts is the gradual decline in retention, underscoring the importance of continuous engagement and re-engagement strategies. |
 
-The cohort starting on 2010-12-01 begins with 100% retention, and shows a decline over time. This is normal as attrition occurs.
+### Recommendations
 
-Looking at the color distribution, the retention rates seem to drop most significantly after the first month.
+| Category   |    Details     |
+|------------------------|---------|
+| Investigate Spikes     | Analyze causes of retention spikes at specific intervals (like the 12th month for the Dec 2010 cohort) and replicate these strategies across other cohorts. |
+| Improve Early Engagement | Implement strategies to maintain engagement beyond the initial months, as most cohorts show a steep decline after the first few months. |
+| Customize Strategies  | Tailor re-engagement and retention strategies based on cohort-specific behavior and lifecycle stages. |
 
-There seems to be a pattern where certain months have higher retention rates later in the lifecycle. For instance, the 10th month for several cohorts shows a relatively higher retention rate (darker color) compared to neighboring months.
 
 
 
