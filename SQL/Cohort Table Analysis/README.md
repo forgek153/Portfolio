@@ -6,6 +6,17 @@ A cohort table, often used in cohort analysis, is a tool that groups customers (
 The dataset used can be found here: https://archive.ics.uci.edu/dataset/352/online+retail
 DB Used: BigQuery 
 ***
+
+## 📚 Table of Contents
+
+  - [Techniques Used](#techniques-used)
+  - [SQL Query](#sql-query)
+  - [Python](#python)
+    - [Quick Analysis](#quick-analysis)
+
+
+
+***
 ## :dart: Techniques Used
 
 | **Technique**                           | **Count of Usage** | **Used in Case Study** |
@@ -24,7 +35,7 @@ DB Used: BigQuery
 | **PARTITION BY Clause**                | 2                   | 1, 3                   |
 
 ***
-## Let's Start
+## SQL Query
 Step 1: Filter Data where CustomerID is not empty and Quantity and UnitPrice is greater than 0
 ```sql
     SELECT 
@@ -391,6 +402,8 @@ sns.heatmap(data = df, annot = True,fmt = '.1f',vmin = 0.0,vmax = 50,cmap='BuGn'
 ```
 
 ![image](https://github.com/forgek153/Projects/assets/132448826/0ec00f1b-4d0b-469e-9b4b-b8434b3235c8)
+***
+## Quick Analysis
 
 Analyzing the table:
 
