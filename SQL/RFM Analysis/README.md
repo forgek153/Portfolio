@@ -1,16 +1,19 @@
 # :mag_right: RFM Analysis
-Welcome, this page will be about using SQL to create an RFM analysis! 
+Welcome, this page will be about using SQL to create a quick RFM analysis! 
 
-A cohort table, often used in cohort analysis, is a tool that groups customers (or users) into cohorts based on shared characteristics or experiences within a defined time-span. These characteristics are often their first purchase date or the date they first signed up for a service. The cohort table then tracks and compares the behavior and performance of these groups over time.
+RFM analysis is a marketing technique used to quantitatively rank and group customers based on their purchasing patterns. The acronym RFM stands for Recency, Frequency, and Monetary value, each of which is a key customer behavior metric. By segmenting customers in this manner, businesses can create more personalized, effective marketing strategies and improve customer engagement and retention.
 
-The dataset used can be found here: https://archive.ics.uci.edu/dataset/352/online+retail
+The dataset used can be found [here](https://archive.ics.uci.edu/dataset/352/online+retail)
+
 DB Used: BigQuery 
+
 ***
 
 ## 📚 Table of Contents
 
   - [SQL Query](#sql-query)
-
+  - [Result](#result)
+  
 ***
 ## SQL Query
 
@@ -255,3 +258,17 @@ GROUP BY
 ORDER BY 
     Segments
 ```
+***
+## Result:
+| Segments | AVG_Recency         | AVG_Frequency      | AVG_MonetaryValue | Count |
+|----------|---------------------|--------------------|-------------------|-------|
+| Bronze   | 218.55541069100397  | 10.940026075619299 | 198.78607561929593| 767   |
+| Gold     | 26.86575178997613   | 191.9797136038186  | 4406.4589510739852| 1676  |
+| Silver   | 100.80897097625329  | 35.74406332453826  | 724.91492453825879| 1895  |
+***
+## Analysis:
+|Segment|Analysis|Next Steps|
+|------|----------|----|
+|Bronze|Customers in the Bronze segment have the longest average recency, indicating they haven't made a purchase recently compared to other segments. Their frequency and monetary value are the lowest among the three groups. This suggests they are either occasional shoppers or new customers who haven't yet established a pattern of regular purchasing.|Aim to increase engagement through welcome offers, re-engagement campaigns, or introducing loyalty programs.|
+|Gold|Gold segment customers are the most valuable to the business. They have purchased recently, do so frequently, and spend significantly more than other segments. This group likely includes loyal customers or those with a higher propensity to purchase. Focusing marketing efforts and customer retention strategies on this segment could yield high returns.|Focus on retention strategies, personalized offers, and exclusive services to maintain their loyalty and high spending.|
+|Silver|Customers in the Silver segment are in the middle in terms of recent activity, frequency of purchases, and monetary value. They are less active and spend less than Gold customers but are more engaged than Bronze customers. This segment might represent occasional or seasonal shoppers, and there might be potential to move some of these customers into the Gold segment with targeted engagement strategies.|Identify potential customers who could be moved to the Gold segment with the right incentives, such as targeted marketing campaigns or personalized recommendations.|
