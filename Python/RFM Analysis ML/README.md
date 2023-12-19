@@ -1,6 +1,7 @@
 # :tv:	RFM Analysis Machine Learning
 
-This project aims to implement machine learning KMeans clustering on an RFM dataset. 
+This project employs RFM (Recency, Frequency, Monetary Value) analysis to segment customers based on their purchasing behavior, using advanced data analytics techniques including K-Means clustering and silhouette scoring. The goal is to categorize customers into distinct groups - Occasional Engagers, Loyal High Spenders, and Consistent Customers - for targeted marketing strategies and improved customer engagement.
+
 
 ## Prerequisite
 
