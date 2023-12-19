@@ -9,33 +9,125 @@ DB Used: BigQuery
 
 ## 📚 Table of Contents
 
-  - [Techniques Used](#techniques-used)
   - [SQL Query](#sql-query)
   - [Python](#python)
     - [Quick Analysis](#quick-analysis)
 
 
-
-***
-## :dart: Techniques Used
-
-| **Technique**                           | **Count of Usage** | 
-|----------------------------------------|---------------------|
-| **JOIN Operation**                     | 40                  |
-| **GROUP BY Clause**                    | 27                  | 
-| **SUM() Function**                     | 26                  |
-| **COUNT() Function**                   | 26                  | 
-| **DISTINCT Keyword**                   | 16                  | 
-| **Common Table Expression (CTE)**      | 18                  | 
-| **Window Functions (RANK(), Dense_Rank())** | 18          |
-| **ORDER BY Clause**                    | 19                  | 
-| **CASE Statement**                     | 8                   |
-| **LIMIT Clause**                       | 3                   |
-| **Date Functions (TO_CHAR(), Extract())** | 7              | 
-| **PARTITION BY Clause**                | 2                   |
-
 ***
 ## SQL Query
+
+## Full Code
+
+```sql
+WITH 
+filtered_df AS (
+    SELECT 
+        * 
+    FROM 
+        `trans-filament-408113.onlineretaildb.retail` 
+    WHERE 
+        CustomerID IS NOT NULL 
+        AND ((Quantity > 0) AND (UnitPrice > 0))
+),
+
+cohortdate AS (
+    SELECT 
+        CustomerID, 
+        InvoiceDate,
+        DATE_TRUNC(InvoiceDate, MONTH) AS InvoiceMonth, 
+        MIN(DATE_TRUNC(InvoiceDate, MONTH)) OVER (PARTITION BY CustomerID) AS CohortMonth
+    FROM 
+        filtered_df
+),
+
+cohortdatediff AS (
+    SELECT 
+        *,
+        EXTRACT(YEAR FROM InvoiceMonth) - EXTRACT(YEAR FROM CohortMonth) AS year_diff,
+        EXTRACT(MONTH FROM InvoiceMonth) - EXTRACT(MONTH FROM CohortMonth) AS month_diff
+    FROM 
+        cohortdate
+),
+
+cohorttable AS (
+    SELECT 
+        CustomerID, InvoiceDate, InvoiceMonth, CohortMonth, 
+        year_diff * 12 + month_diff + 1 AS CohortIndex
+    FROM 
+        cohortdatediff
+),
+
+cohort_counts AS (
+    SELECT
+        CohortMonth,
+        CohortIndex,
+        COUNT(DISTINCT CustomerID) AS CustomerCount
+    FROM
+        cohorttable
+    GROUP BY
+        CohortMonth, CohortIndex
+),
+
+cohort_sizes AS (
+    SELECT 
+        CohortMonth,
+        CustomerCount AS CohortSize
+    FROM 
+        cohort_counts
+    WHERE 
+        CohortIndex = 1
+),
+
+cohort_index AS (
+    SELECT
+        c.CohortMonth,
+            SUM(CASE WHEN CohortIndex = 1 THEN CustomerCount ELSE 0 END) AS Index_1,
+            SUM(CASE WHEN CohortIndex = 2 THEN CustomerCount ELSE 0 END) AS Index_2,
+            SUM(CASE WHEN CohortIndex = 3 THEN CustomerCount ELSE 0 END) AS Index_3,
+            SUM(CASE WHEN CohortIndex = 4 THEN CustomerCount ELSE 0 END) AS Index_4,
+            SUM(CASE WHEN CohortIndex = 5 THEN CustomerCount ELSE 0 END) AS Index_5,
+            SUM(CASE WHEN CohortIndex = 6 THEN CustomerCount ELSE 0 END) AS Index_6,
+            SUM(CASE WHEN CohortIndex = 7 THEN CustomerCount ELSE 0 END) AS Index_7,
+            SUM(CASE WHEN CohortIndex = 8 THEN CustomerCount ELSE 0 END) AS Index_8,
+            SUM(CASE WHEN CohortIndex = 9 THEN CustomerCount ELSE 0 END) AS Index_9,
+            SUM(CASE WHEN CohortIndex = 10 THEN CustomerCount ELSE 0 END) AS Index_10,
+            SUM(CASE WHEN CohortIndex = 11 THEN CustomerCount ELSE 0 END) AS Index_11,
+            SUM(CASE WHEN CohortIndex = 12 THEN CustomerCount ELSE 0 END) AS Index_12,
+            SUM(CASE WHEN CohortIndex = 13 THEN CustomerCount ELSE 0 END) AS Index_13   
+        FROM
+        cohort_counts c
+    GROUP BY
+        c.CohortMonth
+)
+
+
+    SELECT
+        ci.CohortMonth,
+        ci.Index_1 / cs.CohortSize *100 AS Retention_Index_1,
+        ci.Index_2 / cs.CohortSize *100 AS Retention_Index_2,
+        ci.Index_3 / cs.CohortSize *100 AS Retention_Index_3,
+        ci.Index_4 / cs.CohortSize *100 AS Retention_Index_4,
+        ci.Index_5 / cs.CohortSize *100 AS Retention_Index_5,
+        ci.Index_6 / cs.CohortSize *100 AS Retention_Index_6,
+        ci.Index_7 / cs.CohortSize *100 AS Retention_Index_7,
+        ci.Index_8 / cs.CohortSize *100 AS Retention_Index_8,
+        ci.Index_9 / cs.CohortSize *100 AS Retention_Index_9,
+        ci.Index_10 / cs.CohortSize *100 AS Retention_Index_10,
+        ci.Index_11 / cs.CohortSize *100 AS Retention_Index_11,
+        ci.Index_12 / cs.CohortSize *100 AS Retention_Index_12,
+        ci.Index_13 / cs.CohortSize *100 AS Retention_Index_13
+    FROM 
+        cohort_index ci
+    JOIN 
+        cohort_sizes cs ON ci.CohortMonth = cs.CohortMonth
+    ORDER BY CohortMonth
+```
+## Broken Down Code
+
+
+
+
 Step 1: Filter Data where CustomerID is not empty and Quantity and UnitPrice is greater than 0
 ```sql
     SELECT 
@@ -253,112 +345,7 @@ Step 8: Remember step 6? This is where we use the result to divide the size of t
 | 2011-11-01    | 100.0              | 11.145             | 0.0                | 0.0                | 0.0                | 0.0                | 0.0                | 0.0                | 0.0                | 0.0                 | 0.0                 | 0.0                 | 0.0                 |
 | 2011-12-01    | 100.0              | 0.0                | 0.0                | 0.0                | 0.0                | 0.0                | 0.0                | 0.0                | 0.0                | 0.0                 | 0.0                 | 0.0                 | 0.0                 |
 
-## Full Code
 
-```sql
-WITH 
-filtered_df AS (
-    SELECT 
-        * 
-    FROM 
-        `trans-filament-408113.onlineretaildb.retail` 
-    WHERE 
-        CustomerID IS NOT NULL 
-        AND ((Quantity > 0) AND (UnitPrice > 0))
-),
-
-cohortdate AS (
-    SELECT 
-        CustomerID, 
-        InvoiceDate,
-        DATE_TRUNC(InvoiceDate, MONTH) AS InvoiceMonth, 
-        MIN(DATE_TRUNC(InvoiceDate, MONTH)) OVER (PARTITION BY CustomerID) AS CohortMonth
-    FROM 
-        filtered_df
-),
-
-cohortdatediff AS (
-    SELECT 
-        *,
-        EXTRACT(YEAR FROM InvoiceMonth) - EXTRACT(YEAR FROM CohortMonth) AS year_diff,
-        EXTRACT(MONTH FROM InvoiceMonth) - EXTRACT(MONTH FROM CohortMonth) AS month_diff
-    FROM 
-        cohortdate
-),
-
-cohorttable AS (
-    SELECT 
-        CustomerID, InvoiceDate, InvoiceMonth, CohortMonth, 
-        year_diff * 12 + month_diff + 1 AS CohortIndex
-    FROM 
-        cohortdatediff
-),
-
-cohort_counts AS (
-    SELECT
-        CohortMonth,
-        CohortIndex,
-        COUNT(DISTINCT CustomerID) AS CustomerCount
-    FROM
-        cohorttable
-    GROUP BY
-        CohortMonth, CohortIndex
-),
-
-cohort_sizes AS (
-    SELECT 
-        CohortMonth,
-        CustomerCount AS CohortSize
-    FROM 
-        cohort_counts
-    WHERE 
-        CohortIndex = 1
-),
-
-cohort_index AS (
-    SELECT
-        c.CohortMonth,
-            SUM(CASE WHEN CohortIndex = 1 THEN CustomerCount ELSE 0 END) AS Index_1,
-            SUM(CASE WHEN CohortIndex = 2 THEN CustomerCount ELSE 0 END) AS Index_2,
-            SUM(CASE WHEN CohortIndex = 3 THEN CustomerCount ELSE 0 END) AS Index_3,
-            SUM(CASE WHEN CohortIndex = 4 THEN CustomerCount ELSE 0 END) AS Index_4,
-            SUM(CASE WHEN CohortIndex = 5 THEN CustomerCount ELSE 0 END) AS Index_5,
-            SUM(CASE WHEN CohortIndex = 6 THEN CustomerCount ELSE 0 END) AS Index_6,
-            SUM(CASE WHEN CohortIndex = 7 THEN CustomerCount ELSE 0 END) AS Index_7,
-            SUM(CASE WHEN CohortIndex = 8 THEN CustomerCount ELSE 0 END) AS Index_8,
-            SUM(CASE WHEN CohortIndex = 9 THEN CustomerCount ELSE 0 END) AS Index_9,
-            SUM(CASE WHEN CohortIndex = 10 THEN CustomerCount ELSE 0 END) AS Index_10,
-            SUM(CASE WHEN CohortIndex = 11 THEN CustomerCount ELSE 0 END) AS Index_11,
-            SUM(CASE WHEN CohortIndex = 12 THEN CustomerCount ELSE 0 END) AS Index_12,
-            SUM(CASE WHEN CohortIndex = 13 THEN CustomerCount ELSE 0 END) AS Index_13   
-        FROM
-        cohort_counts c
-    GROUP BY
-        c.CohortMonth
-)
-
-
-    SELECT
-        ci.CohortMonth,
-        ci.Index_1 / cs.CohortSize *100 AS Retention_Index_1,
-        ci.Index_2 / cs.CohortSize *100 AS Retention_Index_2,
-        ci.Index_3 / cs.CohortSize *100 AS Retention_Index_3,
-        ci.Index_4 / cs.CohortSize *100 AS Retention_Index_4,
-        ci.Index_5 / cs.CohortSize *100 AS Retention_Index_5,
-        ci.Index_6 / cs.CohortSize *100 AS Retention_Index_6,
-        ci.Index_7 / cs.CohortSize *100 AS Retention_Index_7,
-        ci.Index_8 / cs.CohortSize *100 AS Retention_Index_8,
-        ci.Index_9 / cs.CohortSize *100 AS Retention_Index_9,
-        ci.Index_10 / cs.CohortSize *100 AS Retention_Index_10,
-        ci.Index_11 / cs.CohortSize *100 AS Retention_Index_11,
-        ci.Index_12 / cs.CohortSize *100 AS Retention_Index_12,
-        ci.Index_13 / cs.CohortSize *100 AS Retention_Index_13
-    FROM 
-        cohort_index ci
-    JOIN 
-        cohort_sizes cs ON ci.CohortMonth = cs.CohortMonth
-    ORDER BY CohortMonth
-```
 ***
 ## Python: 
 Let's make this table more visually appealing and easier to understand.
