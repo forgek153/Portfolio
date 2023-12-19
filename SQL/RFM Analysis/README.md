@@ -1,11 +1,16 @@
 # :mag_right: RFM Analysis
-Welcome, this page will be about using SQL to create a quick RFM analysis! 
 
-RFM analysis is a marketing technique used to quantitatively rank and group customers based on their purchasing patterns. The acronym RFM stands for Recency, Frequency, and Monetary value, each of which is a key customer behavior metric. By segmenting customers in this manner, businesses can create more personalized, effective marketing strategies and improve customer engagement and retention.
+This project demonstrates the application of RFM analysis using SQL on a retail dataset in BigQuery. It focuses on segmenting customers into Bronze, Silver, and Gold categories based on their purchasing patterns (Recency, Frequency, Monetary Value), enabling targeted marketing strategies and enhanced customer engagement and retention. The process involves data cleaning, calculation of RFM metrics, and categorization of customers into segments to inform actionable marketing insights.
+
+
+
 
 The dataset used can be found [here](https://archive.ics.uci.edu/dataset/352/online+retail)
 
 DB Used: BigQuery 
+
+RFM analysis is a marketing technique used to quantitatively rank and group customers based on their purchasing patterns. The acronym RFM stands for Recency, Frequency, and Monetary value, each of which is a key customer behavior metric. By segmenting customers in this manner, businesses can create more personalized, effective marketing strategies and improve customer engagement and retention.
+
 
 ***
 
