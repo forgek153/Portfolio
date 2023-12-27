@@ -392,7 +392,7 @@ sns.heatmap(data = df, annot = True,fmt = '.1f',vmin = 0.0,vmax = 50,cmap='BuGn'
 
 ![image](https://github.com/forgek153/Projects/assets/132448826/0ec00f1b-4d0b-469e-9b4b-b8434b3235c8)
 ***
-## Analysis
+### Analysis
 
 | Category               | Details |
 |------------------------|---------|
@@ -407,35 +407,4 @@ sns.heatmap(data = df, annot = True,fmt = '.1f',vmin = 0.0,vmax = 50,cmap='BuGn'
 | Investigate Spikes     | Analyze causes of retention spikes at specific intervals (like the 12th month for the Dec 2010 cohort) and replicate these strategies across other cohorts. |
 | Improve Early Engagement | Implement strategies to maintain engagement beyond the initial months, as most cohorts show a steep decline after the first few months. |
 | Customize Strategies  | Tailor re-engagement and retention strategies based on cohort-specific behavior and lifecycle stages. |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
