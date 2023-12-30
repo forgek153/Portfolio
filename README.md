@@ -1,5 +1,5 @@
 # :art:		 My Portfolio
-Hey there! Take a peek at my data portfolio! It's where I give you the lowdown on all the projects I've been working on in the data world.
+Hey there! Take a peek at my data portfolio! It's where I show all the projects I've been working on in the data world.
 
 ## :world_map:	Table of Contents
 - [SQL](#sql)
