@@ -1,6 +1,6 @@
 # :tv:	RFM Analysis Machine Learning
 
-Project can be viewed [here](https://github.com/forgek153/Projects/blob/main/Python/RFM%20Analysis%20ML/RFM%20Clustering%20ML.ipynb).
+Project can be viewed [here](https://github.com/forgek153/Projects/blob/main/Python/RFM%20Analysis%20ML/RFM%20Clustering%20ML%20Final.ipynb).
 
 This project employs RFM (Recency, Frequency, Monetary Value) analysis to segment customers based on their purchasing behavior, using data analytics techniques including K-Means clustering and silhouette scoring. The goal is to categorize customers into distinct groups - Occasional Engagers, Loyal High Spenders, and Consistent Customers - for targeted marketing strategies and improved customer engagement.
 
