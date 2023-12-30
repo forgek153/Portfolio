@@ -396,15 +396,14 @@ sns.heatmap(data = df, annot = True,fmt = '.1f',vmin = 0.0,vmax = 50,cmap='BuGn'
 
 | Category               | Details |
 |------------------------|---------|
-| Initial Engagement     | All cohorts start with 100% retention, as expected. |
-| Long-term Engagement   | Some cohorts show increased retention at specific points (e.g., 6th, 12th month), possibly due to seasonal buying patterns, marketing campaigns, or customer lifecycle events. |
-| Declining Retention    | A common trend across most cohorts is the gradual decline in retention, underscoring the importance of continuous engagement and re-engagement strategies. |
+| Long-term Engagement   | Some cohorts show increased retention at specific points (6th, 12th month), possibly due to seasonal buying patterns, marketing campaigns, or customer lifecycle events. |
+| Declining Retention    | A common pattern we see in most groups is that over time, fewer people stay involved. This shows how crucial it is to keep people interested and to find ways to bring them back. |
 
 ### Recommendations
 
 | Category   |    Details     |
 |------------------------|---------|
-| Investigate Spikes     | Analyze causes of retention spikes at specific intervals (like the 12th month for the Dec 2010 cohort) and replicate these strategies across other cohorts. |
+| Investigate Spikes     | Analyze causes of retention spikes at specific intervals (like the 12th month) and replicate these strategies across other cohorts. |
 | Improve Early Engagement | Implement strategies to maintain engagement beyond the initial months, as most cohorts show a steep decline after the first few months. |
 | Customize Strategies  | Tailor re-engagement and retention strategies based on cohort-specific behavior and lifecycle stages. |
 
