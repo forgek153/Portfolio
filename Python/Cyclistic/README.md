@@ -1,6 +1,6 @@
 # :bike:	Google Data Analytics Capstone Project : Cyclistic 
 
-Project can be viewed [here](https://github.com/forgek153/Projects/blob/main/Python/Cyclistic/Cyclistics_Final_Cleaned.ipynb).
+Project can be viewed [here](https://github.com/forgek153/Projects/blob/main/Python/Cyclistic/Cyclistics%20Analysis.ipynb).
 
 The "Cyclistic Analysis" project examines the differences in bike usage between annual members and casual riders, focusing on aspects such as ride duration, frequency, distance, time of day, and type of bikes used. Utilizing methodologies like Bivariate Analysis, it provides insights into user behavior and offers strategic recommendations for increasing rider engagement and converting casual riders to regular members. This includes targeted marketing strategies to enhance the overall riding experience and membership uptake.
 ***
