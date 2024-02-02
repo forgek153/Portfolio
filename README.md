@@ -11,7 +11,7 @@ Hey there! Take a peek at my data portfolio! It's where I show all the projects 
 |---|---|---|
 |🔎 [RFM Analysis](https://github.com/forgek153/Projects/tree/main/SQL/RFM%20Analysis)| Data querying, data analysis| This project utilizes BigQuery for RFM analysis to segment customers based on purchase patterns, aiding in tailored marketing and customer retention strategies.|
 |💾 [Cohort Table Analysis](https://github.com/forgek153/Projects/tree/main/SQL/Cohort%20Table%20Analysis)|Data querying, data analysis|This project uses BigQuery to perform cohort analysis, grouping customers by initial interaction and tracking their behavior over time to inform customer engagement and retention strategies.|
-| 💡 [8-Week SQL Challenges](https://github.com/forgek153/8-Week-SQL-Challenge) | Data querying, data analysis, data cleaning, data transformation | Here I present my solutions and thought process on solving the [#8WeekSQLChallenge](https://8weeksqlchallenge.com). It highlights how I handle all sorts of SQL challenges, showcasing my knack for crafting SQL queries and solving problems.
+| 💡 [8-Week SQL Challenges](https://github.com/forgek153/Projects/tree/main/SQL/8%20Week%20SQL%20Challenge) | Data querying, data analysis, data cleaning, data transformation | Here I present my solutions and thought process on solving the [#8WeekSQLChallenge](https://8weeksqlchallenge.com). It highlights how I handle all sorts of SQL challenges, showcasing my knack for crafting SQL queries and solving problems.
 
 # Python
 | Project Link | Area | Project Description | Libraries |    
