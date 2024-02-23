@@ -22,6 +22,6 @@ Hey there! Take a peek at my data portfolio! It's where I show all the projects 
 |:soccer: [UA Combine](https://github.com/forgek153/Projects/tree/main/Python/UA%20Combine) | Data Scraping | This Selenium project scrapes sports competition data, consolidates it into one Excel file, and extracts additional athlete attributes into another Excel file. | selenium,pandas |
 
 # Power BI
-| Project Link  | Project Description |  
-|---|---|
-|:ambulance: [Thailand Road Accidents](https://app.powerbi.com/view?r=eyJrIjoiYWM3MmRiYjItMWMwMy00ZDgwLWJjNmItMTA3ZjIzMGU0MTRkIiwidCI6ImM2MDU2NWU5LTE3MGEtNGQxYy04NzhiLTU3YzUzMmU3NDQ0NyIsImMiOjEwfQ%3D%3D)  | Dashboard revealing patterns, top accident-prone provinces, and insights on accident types.|
+| Project Link  | Project Description |  Notes|
+|---|---|---|
+|:ambulance: [Thailand Road Accidents](https://app.powerbi.com/view?r=eyJrIjoiYWM3MmRiYjItMWMwMy00ZDgwLWJjNmItMTA3ZjIzMGU0MTRkIiwidCI6ImM2MDU2NWU5LTE3MGEtNGQxYy04NzhiLTU3YzUzMmU3NDQ0NyIsImMiOjEwfQ%3D%3D)  | Dashboard revealing patterns, top accident-prone provinces, and insights on accident types.|Due to limitations on live connections, full dashboard can be downloaded [here](https://1drv.ms/u/s!AuKexMdya14ligPqQ0MnH0HOC4Hd?e=chcdZ1).
